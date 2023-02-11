@@ -39,12 +39,17 @@ class FileStorage:
         """
         from models.base_model import BaseModel
         from models.user import User
+        from models.state import State
+        from models.city import City
+        from models.place import Place
+        from models.amenity import Amenity
+        from models.review import Review
         if os.path.exists(self.__file_path):
             with open(self.__file_path, "r", encoding="utf-8") as file:
                 from_json = json.load(file)
                 for value in from_json.values():
                     class_name = value["__class__"]
                     del value["__class__"]
-                    self.new(eval(class_name)("**value"))
+                    self.new(eval(class_name)(**value))
         else:
             return
