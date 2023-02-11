@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-""" 
-This module writes a class that 
-defines all common attributes/methods for other classes 
+"""
+This module writes a class that
+defines all common attributes/methods for other classes
 """
 import uuid
 from datetime import datetime
@@ -29,11 +29,12 @@ class BaseModel:
 
     def __str__(self):
         """ str magic format to return string representation of the class. """
-        return "[{}] ({}) {}".format(__class__.__name__, self.id, self.__dict__)
+        ids = self.id
+        return "[{}] ({}) {}".format(__class__.__name__, ids, self.__dict__)
 
     def save(self):
-        """ 
-        updates the public instance attribute updated_at 
+        """
+        updates the public instance attribute updated_at
         with the current datetime
         """
         storage.save()

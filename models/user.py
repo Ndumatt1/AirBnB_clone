@@ -4,7 +4,7 @@ from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """ 
+    """
     Inherits from BaseModel
     Args:
     email - string
