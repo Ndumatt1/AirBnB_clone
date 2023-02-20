@@ -1,0 +1,1 @@
+This folder contains images for the web_static project
